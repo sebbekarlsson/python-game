@@ -1,5 +1,8 @@
 from game.models.actor import Actor
+from game.models.bullet import Bullet
 
+# Rack upp handen om ni kan skjuta nu,
+# annars sag till sa hjalper jag dig
 
 class Living(Actor):
 
@@ -25,3 +28,11 @@ class Living(Actor):
 
     def attack(self, living):
         living.take_damage(self)
+
+    def shoot(self):
+        bullet = Bullet(self.x, self.y, self.app)
+        bullet.set_direction(self.direction)
+        self.app.add(bullet)
+
+# Rack upp handen om ni kan skjuta nu,
+# annars sag till sa hjalper jag dig

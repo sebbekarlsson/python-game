@@ -2,7 +2,7 @@ from game.models.living import Living
 from game.models.actor import Actor
 import pygame
 
-# Rack upp handen om allt fungerar som tidigare
+
 class Player(Living):
 
     def __init__(self, *args, **kwargs):

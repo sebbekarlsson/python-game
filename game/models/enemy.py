@@ -1,4 +1,6 @@
 from game.models.living import Living
+from game.models.actor import Actor
+from game.models.bullet import Bullet
 import pygame
 
 
@@ -9,8 +11,12 @@ class Enemy(Living):
         self.set_color(255, 0, 0)
 
 
+    # Rack upp handen nar ni ser meddelandet
     def update(self):
-        pass
+       Actor.update(self)
+
+       if self.is_colliding(Bullet):
+           print("Enemy touched a bullet!")
 
 
     def draw(self):
